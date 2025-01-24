@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+</head>
+
+<body>
+    <nav class="navbar has-background-link">
+        <div class="navbar-brand">
+            <h1 class="has-text-white ml-1 title">BLOG</h1>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="title">Contact Us</h1>
+
+        {% if messages %}
+        <div>
+            {% for message in messages %}
+            <div class="notification is-success">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <form method="POST" class="box">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="button is-link">Send Message</button>
+        </form>
+    </div>
+</body>
+
+</html>

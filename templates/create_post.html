@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+</head>
+<body>
+
+    <nav class="navbar has-background-link">
+        <div class="navbar-brand">
+            <h1 class="has-text-white ml-1 title">Create New Blog Post</h1>
+        </div>
+    </nav>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="mt-5 is-flex is-justify-content-center is-flex-direction-column">
+            <label for="title" class="label">Title</label>
+            <input type="text" required name="title" id="title" class="input is-success">
+            <label for="content" class="label">Content</label>
+            <textarea name="content" id="content" class="textarea is-success"></textarea>
+            <button class="button mt-4">Create Post</button>
+        </div>
+    </form>
+
+</body>
+</html>

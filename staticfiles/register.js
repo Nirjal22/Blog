@@ -1,0 +1,1 @@
+// this javascript file is here just to show how the static files are created and served.

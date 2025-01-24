@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <script src="{% static 'register.js' %}?v={{ timestamp }}" defer></script>
+</head>
+
+<body>
+    <nav class="navbar has-background-link">
+        <div class="navbar-brand">
+            <h1 class="has-text-white ml-1 title">BLOG</h1>
+        </div>
+        <div class="navbar-end">
+            <ul class="is-flex mr-2">
+                <!-- Link for Register -->
+                <li class="m-2">
+                    <a href="{% url 'index' %}"><button class="button is-white">Sign out</button></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <form class="" action="" method="POST">
+        {% csrf_token %}
+
+        {% if error_message %}
+        <div>
+            <h2>
+                {{ error_message }}
+            </h2>
+        </div>
+        {% endif %}
+
+        <div class="mt-5 is-flex is-justify-content-center is-flex-direction-column">
+            <label for="username" class="label">Username</label>
+            <input type="email" name="username" required id="usernameInput" placeholder="@gmail.com"
+                class="input is-success">
+            <label for="password" class="label">Password</label>
+            <input type="password" name="password" id="passwordInput" class="input is-success">
+            <button class="button mt-4" id="signupBtn">Sign Up</button>
+        </div>
+    </form>
+</body>
+
+</html>
